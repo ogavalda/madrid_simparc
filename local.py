@@ -132,8 +132,24 @@ class LocalBatch(BuildStockBatchBase):
         start_time = time.perf_counter()
 
         # Get the building properties from a CSV file
-        data = pd.read_csv(path_rel_to_file(self.cfg["CURRENT_PATH"], self.cfg["SAMPLE_FILE"]))
-        
+        sample_file_path = path_rel_to_file(self.cfg["CURRENT_PATH"], self.cfg["SAMPLE_FILE"])
+        data = pd.read_csv(sample_file_path)
+        if data.shape[1] < 10:
+            # The file was likely re-saved as semicolon-delimited (e.g. by Excel under a
+            # European locale, which silently converts CSVs on save). Retry before failing.
+            logger.warning(
+                f"'{sample_file_path}' parsed with only {data.shape[1]} column(s); it may be "
+                "semicolon-delimited (a common side effect of editing/saving in Excel). "
+                "Retrying with sep=';'."
+            )
+            data = pd.read_csv(sample_file_path, sep=';')
+            if data.shape[1] < 10:
+                raise ValueError(
+                    f"'{sample_file_path}' could not be parsed as a valid building-stock CSV "
+                    f"with either comma or semicolon delimiters (got {data.shape[1]} column(s)). "
+                    "Check the file's actual delimiter and structure."
+                )
+
 		# Define a seed for each building for reproducibility
         if "SEED" not in self.cfg:
             SEED = random.randint(0,2**31-1)

@@ -46,6 +46,12 @@ class WeatherFile
   def process_epw(runner)
     get_header_info_from_epw(epw_file)
     epw_has_design_data = get_design_info_from_epw(runner, epw_file)
+    if not epw_has_design_data
+      epw_has_design_data = get_design_info_from_ddy()
+      if epw_has_design_data && not(runner.nil?)
+        runner.registerWarning('EPW header design conditions not found; using design conditions from companion .ddy file instead.')
+      end
+    end
 
     # Timeseries data:
     rowdata = []
@@ -296,6 +302,43 @@ class WeatherFile
       return true
     end
     return false
+  end
+
+  # Stores design conditions from a companion .ddy file (same basename as the EPW) if
+  # available. This is a fallback for when the EPW header's embedded DESIGN CONDITIONS
+  # line can't be parsed by OpenStudio (e.g., a newer ASHRAE Handbook format with more
+  # fields than this OpenStudio version's EpwFile parser expects). The .ddy's annual
+  # 99% heating and 1% cooling SizingPeriod:DesignDay objects are used, matching the
+  # percentiles used by get_design_info_from_epw.
+  #
+  # @return [Boolean] True if design conditions were successfully read from a .ddy file
+  def get_design_info_from_ddy()
+    ddy_path = epw_path.sub(/\.epw\z/i, '.ddy')
+    return false unless File.exist?(ddy_path)
+
+    design_days = {}
+    File.read(ddy_path).scan(/SizingPeriod:DesignDay,(.*?);/m) do |block|
+      fields = {}
+      block[0].each_line do |line|
+        next unless line.include?('!-')
+
+        value, field_name = line.split('!-', 2)
+        fields[field_name.strip] = value.strip.chomp(',').strip
+      end
+      design_days[fields['Name']] = fields unless fields['Name'].nil?
+    end
+
+    heating_dd = design_days.values.find { |fields| fields['Name'] =~ /Ann Htg 99% Condns DB/i }
+    cooling_dd = design_days.values.find { |fields| fields['Name'] =~ /Ann Clg 1% Condns DB=>MWB/i }
+    return false if heating_dd.nil? || cooling_dd.nil?
+
+    design.HeatingDrybulb = UnitConversions.convert(Float(heating_dd['Maximum Dry-Bulb Temperature {C}']), 'C', 'F')
+    design.CoolingDrybulb = UnitConversions.convert(Float(cooling_dd['Maximum Dry-Bulb Temperature {C}']), 'C', 'F')
+    design.DailyTemperatureRange = UnitConversions.convert(Float(cooling_dd['Daily Dry-Bulb Temperature Range {C}']), 'deltaC', 'deltaF')
+    press_psi = Psychrometrics.Pstd_fZ(header.Elevation)
+    cooling_wetbulb_f = UnitConversions.convert(Float(cooling_dd['Wetbulb at Maximum Dry-Bulb {C}']), 'C', 'F')
+    design.CoolingHumidityRatio = Psychrometrics.w_fT_Twb_P(design.CoolingDrybulb, cooling_wetbulb_f, press_psi)
+    return true
   end
 
   # Calculates and stores design conditions from the EPW data. This is a fallback for

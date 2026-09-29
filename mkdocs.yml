@@ -1,5 +1,5 @@
 site_name: SimParc-R Simulator Documentation
-site_description: Bilingual documentation for the SimParc-R residential stock simulator
+site_description: SimParc-R residential stock simulator applied to Madrid
 site_url: https://hq-opensource.github.io/simparc-r-simulator/
 repo_url: https://github.com/hq-opensource/simparc-r-simulator
 repo_name: hq-opensource/simparc-r-simulator
@@ -26,15 +26,12 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - English:
+  - Madrid:
+      - Summary: en/madrid-summary.md
+      - Simulation Hypotheses: en/madrid-hypotheses.md
+  - SimParc-R reference:
       - Overview: en/overview.md
       - Installation: en/installation.md
       - Configuration: en/configuration.md
       - Running Simulations: en/running-simulations.md
       - Results and Outputs: en/results.md
-  - Francais:
-      - Aperçu: fr/apercu.md
-      - Installation: fr/installation.md
-      - Configuration: fr/configuration.md
-      - Exécution des simulations: fr/execution-des-simulations.md
-      - Résultats et sorties: fr/resultats.md

@@ -66,6 +66,13 @@
             "SOURCE": "https://collaboration.cmc.ec.gc.ca/cmc/climate/Engineer_Climate/CWEC_FMCCE/"
         }
     },
+    "TMYx": {
+        "2023": {
+            "Madrid": "ESP_MD_Madrid-Barajas-Suarez.AP.082210_TMYx.2009-2023.epw",
+            "DESCRIPTION": "TMYx (typical meteorological year) file for Madrid-Barajas-Suarez Airport (WMO 082210), period 2009-2023",
+            "SOURCE": "https://climate.onebuilding.org/WMO_Region_6_Europe/ESP_Spain/MD_Madrid/"
+        }
+    },
     "PCIC": {
         "2020": {
             "Saguenay-Lac-Saint-Jean": "2020s_CAN_QC_Saguenay-Bagotville.AP-CFB.Bagotville.717270_CWEC2016.epw",
