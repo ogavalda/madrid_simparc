@@ -1,0 +1,44 @@
+FWG coupled moisture consistency v1
+Primary state: morphed dry bulb; station pressure; baseline q + smoothed climate delta q.
+ASHRAE 2017: ice saturation at/below 0.01 C; liquid above; inverse uses same convention.
+q bounded to [0,q_sat(T,p)]; RH bounded to [0,100]. T and p unchanged.
+Moisture removal is an output adjustment, not modeled precipitation or latent heating.
+Missing RH is preserved. Zero vapor or inverse below -70 C gives missing dew point (99.9).
+Row numbers are 1-based weather records. Counts describe records, not duration.
+Monthly means are over available records; RH adjustment excludes negative requested q.
+saturation_limited=20; negative_q_limited=0; missing_RH=0; unrepresentable_dew=0
+max_abs_q_adjustment_kg_kg=8.163964880e-05; max_abs_RH_adjustment_percentage_points=1.709766377
+month,q_records,RH_records,mean_q_before,mean_q_after,delta_mean_q,mean_RH_before,mean_RH_after,delta_mean_RH
+1,744,744,0.004783259109,0.004783259109,0.000000000,74.51932039,74.51932039,0.000000000
+2,672,672,0.004526999453,0.004526999453,0.000000000,67.80267654,67.80267654,0.000000000
+3,744,744,0.005145458955,0.005145458955,0.000000000,59.88821058,59.88821058,0.000000000
+4,720,720,0.006531619390,0.006531619390,0.000000000,60.80014083,60.80014083,0.000000000
+5,744,744,0.006936803628,0.006936803628,0.000000000,50.08457287,50.08457287,0.000000000
+6,720,720,0.007619631634,0.007619631634,0.000000000,41.56655622,41.56655622,0.000000000
+7,744,744,0.007866870019,0.007866870019,0.000000000,31.19080708,31.19080708,0.000000000
+8,744,744,0.007139172169,0.007139172169,0.000000000,30.78906019,30.78906019,0.000000000
+9,720,720,0.006801621634,0.006801621634,0.000000000,40.06027615,40.06027615,0.000000000
+10,744,744,0.007790201208,0.007790201208,0.000000000,62.78593406,62.78593406,0.000000000
+11,720,720,0.006932146059,0.006932146059,0.000000000,77.31230360,77.31230360,0.000000000
+12,744,744,0.005853539565,0.005852586611,-9.529539011e-07,82.79035329,82.77030349,-0.02004980241
+record,flag
+8215,saturation_limited
+8289,saturation_limited
+8307,saturation_limited
+8309,saturation_limited
+8310,saturation_limited
+8328,saturation_limited
+8329,saturation_limited
+8331,saturation_limited
+8333,saturation_limited
+8334,saturation_limited
+8338,saturation_limited
+8623,saturation_limited
+8624,saturation_limited
+8625,saturation_limited
+8626,saturation_limited
+8642,saturation_limited
+8643,saturation_limited
+8644,saturation_limited
+8648,saturation_limited
+8649,saturation_limited

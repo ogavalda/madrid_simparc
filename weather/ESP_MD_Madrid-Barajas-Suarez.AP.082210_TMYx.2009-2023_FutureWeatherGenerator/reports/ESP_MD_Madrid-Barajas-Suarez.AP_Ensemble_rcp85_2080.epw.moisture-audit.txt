@@ -1,0 +1,70 @@
+FWG coupled moisture consistency v1
+Primary state: morphed dry bulb; station pressure; baseline q + smoothed climate delta q.
+ASHRAE 2017: ice saturation at/below 0.01 C; liquid above; inverse uses same convention.
+q bounded to [0,q_sat(T,p)]; RH bounded to [0,100]. T and p unchanged.
+Moisture removal is an output adjustment, not modeled precipitation or latent heating.
+Missing RH is preserved. Zero vapor or inverse below -70 C gives missing dew point (99.9).
+Row numbers are 1-based weather records. Counts describe records, not duration.
+Monthly means are over available records; RH adjustment excludes negative requested q.
+saturation_limited=46; negative_q_limited=0; missing_RH=0; unrepresentable_dew=0
+max_abs_q_adjustment_kg_kg=0.0002667888597; max_abs_RH_adjustment_percentage_points=6.379320655
+month,q_records,RH_records,mean_q_before,mean_q_after,delta_mean_q,mean_RH_before,mean_RH_after,delta_mean_RH
+1,744,744,0.005319290269,0.005318400762,-8.895069142e-07,73.70648084,73.68081424,-0.02566659746
+2,672,672,0.005228282035,0.005228282035,0.000000000,67.92075728,67.92075728,0.000000000
+3,744,744,0.005653232730,0.005653232730,0.000000000,58.17577378,58.17577378,0.000000000
+4,720,720,0.006917404700,0.006917404700,0.000000000,55.37045140,55.37045140,0.000000000
+5,744,744,0.007430862333,0.007430862333,0.000000000,43.89027395,43.89027395,0.000000000
+6,720,720,0.008158670232,0.008158670232,0.000000000,35.50758565,35.50758565,0.000000000
+7,744,744,0.008478669388,0.008478669388,0.000000000,26.66984279,26.66984279,0.000000000
+8,744,744,0.007934014261,0.007934014261,0.000000000,26.98134614,26.98134614,0.000000000
+9,720,720,0.008035514131,0.008035514131,0.000000000,37.61235602,37.61235602,0.000000000
+10,744,744,0.008748215364,0.008748215364,0.000000000,57.54389229,57.54389229,0.000000000
+11,720,720,0.007716098823,0.007716098823,0.000000000,73.67526791,73.67526791,0.000000000
+12,744,744,0.006581733983,0.006576038672,-5.695310821e-06,81.28125256,81.15234954,-0.1289030251
+record,flag
+103,saturation_limited
+104,saturation_limited
+105,saturation_limited
+125,saturation_limited
+126,saturation_limited
+127,saturation_limited
+128,saturation_limited
+129,saturation_limited
+152,saturation_limited
+8192,saturation_limited
+8285,saturation_limited
+8286,saturation_limited
+8288,saturation_limited
+8289,saturation_limited
+8309,saturation_limited
+8310,saturation_limited
+8329,saturation_limited
+8333,saturation_limited
+8334,saturation_limited
+8338,saturation_limited
+8552,saturation_limited
+8601,saturation_limited
+8621,saturation_limited
+8623,saturation_limited
+8624,saturation_limited
+8625,saturation_limited
+8626,saturation_limited
+8642,saturation_limited
+8643,saturation_limited
+8644,saturation_limited
+8645,saturation_limited
+8646,saturation_limited
+8647,saturation_limited
+8648,saturation_limited
+8649,saturation_limited
+8717,saturation_limited
+8718,saturation_limited
+8719,saturation_limited
+8720,saturation_limited
+8721,saturation_limited
+8736,saturation_limited
+8737,saturation_limited
+8738,saturation_limited
+8739,saturation_limited
+8740,saturation_limited
+8741,saturation_limited

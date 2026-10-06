@@ -1,0 +1,20 @@
+{
+  "model":"FWG_CURRENT",
+  "outcome":"CALCULATED",
+  "implementationRevision":"1",
+  "energyPlusReferenceVersion":null,
+  "cloudInput":"TOTAL_SKY_COVER",
+  "missingCloudPolicy":"MISSING_PROPAGATION",
+  "inputPrecisionPolicy":"LEGACY_NATIVE",
+  "sequenceInitialization":"STATELESS",
+  "records":8760,
+  "calculatedRecords":8760,
+  "uncomputedRecords":0,
+  "opaqueFallbackRecords":0,
+  "opaqueSeedRecords":0,
+  "opaqueCarryRecords":0,
+  "longestOpaqueGapHours":0,
+  "existingInfraredReplacedRecords":8760,
+  "uncomputedReason":"NONE",
+  "capabilityAssessment":{"revision":"coupled-moisture-n23-1","inputSha256":"287ceacfa23cd69517414f74330ad16c9e9de921c7ccf6e8684606ed4b3d6319","records":8760,"supportedTimeAxis":true,"projectedCurrentCalculated":8760,"projectedClarkAllenCalculated":8760,"projectedOpaqueFallback":0,"currentEligible":true,"clarkAllenEligible":true,"invalidReasons":[]}
+}
