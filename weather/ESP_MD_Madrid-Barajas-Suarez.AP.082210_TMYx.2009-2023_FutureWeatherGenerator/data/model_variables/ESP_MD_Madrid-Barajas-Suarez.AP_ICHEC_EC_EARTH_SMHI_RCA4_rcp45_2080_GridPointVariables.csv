@@ -1,0 +1,14 @@
+# ICHEC_EC_EARTH_SMHI_RCA4 rcp45 2080
+# Standard deviation (sd) columns are the standard deviation of the selected models in the Ensemble when the ensemble option is TRUE.
+# Otherwise these are related to the month standard deviation obtained from the climate model.
+Variable,Abbreviation,Unit,Jan,Jan (sd),Feb,Feb (sd),Mar,Mar (sd),Apr,Apr (sd),May,May (sd),Jun,Jun (sd),Jul,Jul (sd),Aug,Aug (sd),Sep,Sep (sd),Oct,Oct (sd),Nov,Nov (sd),Dec,Dec (sd)
+Near surface air temperature,tas,∆°C,1.26,1.69,1.67,1.56,1.78,1.39,1.92,1.63,2.10,2.40,1.91,2.44,2.54,1.67,2.90,1.82,2.79,2.07,2.14,2.03,1.84,1.57,1.81,1.97
+Daily maximum near surface air temperature,tasmax,∆°C,1.42,1.63,1.70,1.84,1.67,2.01,2.20,2.26,2.44,3.08,1.86,3.04,2.53,1.93,2.91,2.07,2.39,2.55,1.98,2.85,1.63,1.51,2.22,1.43
+Daily minimum near surface air temperature,tasmin,∆°C,0.95,1.53,1.27,1.49,1.62,1.27,1.69,1.38,1.80,1.88,2.04,1.93,2.72,1.45,2.91,1.54,3.29,1.92,2.30,1.85,1.66,1.90,1.51,1.98
+Precipitation,pr,fraction,1.17,1.37,1.38,1.44,1.33,1.14,1.07,0.98,0.88,0.92,1.17,1.74,1.43,2.49,0.80,0.96,2.11,2.99,0.90,1.13,1.17,1.16,0.93,1.14
+Surface downwelling shortwave radiation,rsds,∆W/m²,-2.07,12.64,-6.28,17.57,-7.23,25.35,5.19,23.14,9.50,21.65,-0.20,19.55,-2.87,8.32,0.24,7.75,-6.93,13.44,0.57,16.71,-2.43,14.59,-0.04,14.59
+Total cloud cover percentage,clt,∆%,1.72,16.43,5.68,16.64,7.15,16.42,-1.30,12.79,-0.91,12.46,-0.30,9.01,0.87,6.26,-1.32,6.85,3.45,9.40,1.41,13.03,2.52,16.04,-0.50,18.63
+Snow depth,snd,fraction,0.49,0.36,0.27,0.35,0.25,0.61,0.33,1.69,1.00,0.00,1.00,0.00,1.00,0.00,1.00,0.00,1.00,0.00,1.40,0.00,0.24,0.42,0.38,0.34
+Near surface specific humidity,huss,∆kg/kg,0.000431,0.000691,0.000740,0.000750,0.000849,0.000662,0.000740,0.000781,0.000368,0.000942,0.000575,0.001379,0.000974,0.001153,0.000729,0.001113,0.001191,0.001272,0.001104,0.001059,0.000751,0.000951,0.000649,0.000900
+Air pressure at mean sea level,psl,∆hPa,-0.61,6.69,-0.21,6.89,-0.89,6.28,2.43,3.92,0.92,2.78,-0.28,1.81,0.09,1.61,0.54,1.72,-0.79,1.69,0.88,2.87,-0.05,4.90,2.01,6.75
+Near surface wind speed,sfcWind,fraction,1.0798,0.3475,1.0001,0.2604,0.9773,0.2392,0.9487,0.1642,0.9868,0.1526,1.0093,0.1421,0.9908,0.0973,0.9722,0.1090,1.0109,0.1527,0.9215,0.1599,1.0160,0.2245,0.9927,0.3509

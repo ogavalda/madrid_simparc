@@ -9,14 +9,12 @@ wheels/
 # Virtual environments
 .venv
 
-# ignore the folder "results"
-results
-
 # ignore the folder "openstudio-3.9.0"
 openstudio-3.9.0
 
-# Ignore parquet files
+# Ignore parquet files (except simulation results, which are tracked)
 *.parquet
+!results/**/*.parquet
 
 # Ignore devcontainer internal files
 .devcontainer/internal

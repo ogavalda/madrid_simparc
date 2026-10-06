@@ -1,0 +1,4 @@
+[openstudio.measure.OSRunner] <1> Cannot find current Workflow Step
+[openstudio.WorkflowStepResult] <0> WorkflowStepResult value called with undefined stepResult, returning 'Success'
+BuildResidentialHPXML success: true
+Saved connected geometry model: C:\Users\oriol\PycharmProjects\simparc-r-simulator\results\osm_connected\MAD_MF_1981_2007.osm (8 surfaces, 11 sub-surfaces, 1 spaces)

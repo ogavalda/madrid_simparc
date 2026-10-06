@@ -1,0 +1,42 @@
+{
+  "schema": "fwg-solarqc-scientific-v2",
+  "applicationVersion": "v1.1.0",
+  "baseline": "C:\\Users\\oriol\\PycharmProjects\\simparc-r-simulator\\weather\\ESP_MD_Madrid-Barajas-Suarez.AP.082210_TMYx.2009-2023_FutureWeatherGenerator\\weather\\ESP_MD_Madrid-Barajas-Suarez.AP.082210_TMYx.2009-2023_FutureWeatherGenerator-SolarQC_multimodel_constrained_ensemble_perez_1990.epw",
+  "solarGeometryAgreement": "HIGH",
+  "interpretation": "Production solar geometry agrees closely with the independent reference; decomposition spread is reported as model-form dispersion, not a confidence interval.",
+  "scope": "Analytical solar-position agreement only; not overall weather accuracy.",
+  "solarGeometry": {
+    "comparedRecords": 8760,
+    "meanAbsoluteZenithDifferenceDegrees": 0.10745951,
+    "rmseZenithDifferenceDegrees": 0.12842519,
+    "maximumAbsoluteZenithDifferenceDegrees": 0.30363005,
+    "differencesAboveHalfDegree": 0,
+    "commonDaylightRecords": 4400,
+    "commonNighttimeRecords": 4353,
+    "horizonDisagreementRecords": 7,
+    "confidence": "HIGH"
+  },
+  "modelFormDispersion": {
+    "predictorMethod": "fwg-solar-series-predictors-v2-beta27-aligned",
+    "comparisonPolicy": "Eight constrained individual models on a common valid-record mask; dependent ensemble excluded from dispersion.",
+    "informativeRecords": 4525,
+    "meanDniInterquartileRangeWhM2": 31.37745380,
+    "meanDhiInterquartileRangeWhM2": 15.49626285,
+    "p95DniRangeWhM2": 189.24766280,
+    "p95DhiRangeWhM2": 116.11415360,
+    "meanRelativeDniRange": 0.50820310,
+    "meanRelativeDhiRange": 0.33473930,
+    "interpretation": "Candidate spread is model-form dispersion and is not a calibrated probabilistic confidence interval."
+  },
+  "constrainedModelComparison": [
+    {"model": "MULTIMODEL_CONSTRAINED_ENSEMBLE", "commonMaskRecords": 4525, "meanDniWhM2": 404.45284880, "meanDhiWhM2": 145.29154585, "lowSunDiffuseOnlyRecords": 481},
+    {"model": "ORGILL_HOLLANDS_1977", "commonMaskRecords": 4525, "meanDniWhM2": 401.79264034, "meanDhiWhM2": 143.92094126, "lowSunDiffuseOnlyRecords": 481},
+    {"model": "ERBS_1982", "commonMaskRecords": 4525, "meanDniWhM2": 406.90104306, "meanDhiWhM2": 140.79230629, "lowSunDiffuseOnlyRecords": 481},
+    {"model": "MAXWELL_DISC_1987", "commonMaskRecords": 4525, "meanDniWhM2": 412.50587208, "meanDhiWhM2": 145.79903201, "lowSunDiffuseOnlyRecords": 816},
+    {"model": "REINDL_REDUCED_1990", "commonMaskRecords": 4525, "meanDniWhM2": 401.56331637, "meanDhiWhM2": 150.10307957, "lowSunDiffuseOnlyRecords": 481},
+    {"model": "BOLAND_LOGISTIC_2008", "commonMaskRecords": 4525, "meanDniWhM2": 399.40757458, "meanDhiWhM2": 144.76933764, "lowSunDiffuseOnlyRecords": 481},
+    {"model": "RIDLEY_BOLAND_LAURET_2010", "commonMaskRecords": 4525, "meanDniWhM2": 421.97558468, "meanDhiWhM2": 137.67694548, "lowSunDiffuseOnlyRecords": 481},
+    {"model": "ENGERER_2015_METHOD_2", "commonMaskRecords": 4525, "meanDniWhM2": 398.19495996, "meanDhiWhM2": 149.33054490, "lowSunDiffuseOnlyRecords": 481},
+    {"model": "PAULESCU_BLAGA_2019", "commonMaskRecords": 4525, "meanDniWhM2": 413.04646802, "meanDhiWhM2": 137.87630654, "lowSunDiffuseOnlyRecords": 481}
+  ]
+}
